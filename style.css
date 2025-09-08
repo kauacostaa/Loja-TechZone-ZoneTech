@@ -1,0 +1,257 @@
+/* Resetando os estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e fundo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #000;
+    padding: 25px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+header .logo h1::before {
+    content: 'Tech';
+    color: #0f8dff;
+}
+
+header .logo h1::after {
+    content: 'Zone / ZoneTech';
+    color: #fff;
+    margin-left: 4px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #0f8dff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Seções */
+section {
+    padding: 80px 20px;
+}
+
+#home {
+    text-align: center;
+    background: linear-gradient(145deg, #000, #0f0f0f);
+    animation: fadeIn 1s ease;
+}
+
+#home .intro h2 {
+    font-size: 2.8rem;
+    color: #0f8dff;
+    margin-bottom: 10px;
+}
+
+#home .intro p {
+    font-size: 1.2rem;
+    color: #aaa;
+}
+
+.store-image img {
+    width: 85%;
+    max-width: 800px;
+    margin-top: 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(15, 141, 255, 0.4);
+    transition: transform 0.4s ease;
+}
+
+.store-image img:hover {
+    transform: scale(1.03);
+}
+
+/* Produtos */
+#produtos {
+    background-color: #151515;
+    text-align: center;
+}
+
+#produtos h2 {
+    font-size: 2.5rem;
+    color: #0f8dff;
+    margin-bottom: 40px;
+}
+
+.produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.produto {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    width: 260px;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgba(15, 141, 255, 0.5);
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.produto h3 {
+    margin: 15px 0 10px;
+    color: #0f8dff;
+    font-size: 1.3rem;
+}
+
+.produto p {
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+/* Seções Informativas */
+#sobre, #contato {
+    background-color: #101010;
+    text-align: center;
+}
+
+#sobre h2,
+#contato h2 {
+    font-size: 2.3rem;
+    color: #0f8dff;
+    margin-bottom: 15px;
+}
+
+#sobre p,
+#contato p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Rodapé */
+footer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 0.95rem;
+}
+
+/* Painel de acessibilidade */
+.painel-acessibilidade {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.botao-acessibilidade {
+    background-color: #0f8dff;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: background 0.3s;
+}
+
+.opcoes-acessibilidade {
+    display: none;
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #1c1c1c;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.opcoes-acessibilidade button {
+    background-color: #0f8dff;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.painel-acessibilidade:hover .opcoes-acessibilidade {
+    display: flex;
+}
+
+/* Tema daltônico */
+body.daltonico {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+body.daltonico header,
+body.daltonico footer,
+body.daltonico section {
+    background-color: #111 !important;
+}
+
+body.daltonico a {
+    color: #ffd700 !important;
+}
+
+/* Animação fade */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
